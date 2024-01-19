@@ -1,0 +1,189 @@
+@use "base";
+@import "../assets/css/reset.css";
+
+
+body {
+    font-family: 'Inter';
+}
+
+.bmi-header {
+    position: relative;
+    height: 70vh;
+    min-height: 700px;
+}
+
+.bmi-intro {
+    width: 70%;
+    height: 100%;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+
+    background: base.$gradient-header-card;
+}
+
+
+.bmi-intro-icon {
+    display: inline-block;
+    background-image: url("../assets/images/logo.svg");
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+
+    margin: 5% 0% 0% 10%
+}
+
+.bmi-intro-text {
+    width: 60%;
+    margin: 10% 30% 0% 10%
+}
+
+.bmi-intro-text>h1 {
+    @include base.heading-xl;
+    color: base.$color-gunmetal;
+    margin: 0% 0% 5% 0%;
+}
+
+.bmi-intro-text>p {
+    @include base.body-text-small;
+    color: base.$color-dark-electric-blue;
+    width: 80%;
+}
+
+
+// calculator card
+.bmi-inputs {
+    position: absolute;
+    top: 20%;
+    right: 7%;
+    width: 40%;
+
+    border-radius: 16px;
+    background-color: base.$color-pure-white;
+    box-shadow: 5px 5px 10px rgba(143, 174, 207, 0.5);
+}
+
+.bmi-inputs-container {
+    padding: 5%;
+}
+
+.bmi-inputs-container>h2 {
+    @include base.heading-m;
+    margin: 0;
+}
+
+.form-container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.radio-group {
+    display: flex;
+}
+
+.radio-group > .form-radio {
+    flex: 1;
+}
+
+.data-group {
+    display: flex;
+    gap: 24px;
+}
+
+.data-group > .input-group {
+    flex: 1;
+}
+
+.form-radio {
+    display: flex;
+    gap: 18px;
+
+    align-items: center;
+}
+
+.form-radio>input[type="radio"] {
+    font: inherit;
+    color: base.$color-blue;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid base.$color-blue;
+}
+
+.form-radio>label {
+    margin-top: 2px;
+    font-size: base.$font-size-body;
+    font-weight: base.$font-weight-semibold;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group>label {
+    @include base.form-input-label;
+}
+
+.input-group>input {
+    @include base.form-input;
+}
+
+.input-group>input::placeholder {
+    @include base.form-input-placeholder;
+}
+
+#imperial-data {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.imperial-data-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.imperial-data-group>label {
+    @include base.form-input-label;
+}
+
+
+.imperial-input-group {
+    display: flex;
+    gap: 24px;
+}
+
+.imperial-input-group>input {
+    @include base.form-input;
+    flex: 1;
+}
+
+.imperial-input-group>input::placeholder {
+    @include base.form-input-placeholder;
+}
+
+
+
+.result-container {
+    color: base.$color-pure-white;
+    background: base.$gradient-bmi-result;
+    padding: 32px;
+
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.result-container > h2 {
+    @include base.heading-m;
+}
+ 
+.result-container > p {
+    margin-top: 16px;
+    @include base.body-text-small;
+}

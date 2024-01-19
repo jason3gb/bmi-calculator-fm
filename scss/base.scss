@@ -1,0 +1,100 @@
+// global properties
+
+// color
+$color-blue: #345FF6;
+$color-gunmetal: #253347;
+$color-dark-electric-blue: #5E6E85;
+$color-borders: #D8E2E7;
+$color-pure-white: #FFFFFF;
+
+
+// font
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+// Define font family
+$font-family-base: 'Inter', sans-serif;
+
+// Font weights
+$font-weight-regular: 400; // Assuming Inter Regular is 400 weight
+$font-weight-semibold: 600; // Assuming Inter Semibold is 600 weight
+
+// Font sizes
+$font-size-xs: 20px; // Heading S
+$font-size-sm: 24px; // Heading M
+$font-size-md: 48px; // Heading L
+$font-size-lg: 64px; // Heading XL
+$font-size-body: 16px; // Body M
+$font-size-body-small: 14px; // Body S
+
+// Line heights
+$line-height-xs: 110%; // For Heading S, M, L, XL
+$line-height-body: 150%; // For Body M, S
+
+// gradient
+$gradient-header-card: linear-gradient(to bottom right, #FFFFFF, #D6E6FE 90%);
+$gradient-bmi-result: linear-gradient(to right, #345FF6, #587DFF);
+
+// Define specific heading styles
+@mixin heading-xl {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xs;
+}
+
+@mixin heading-l {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xs;
+}
+
+@mixin heading-m {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xs;
+}
+
+@mixin heading-s {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-xs;
+}
+
+// Define body text styles
+@mixin body-text {
+  font-size: $font-size-body;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-body;
+}
+
+@mixin body-text-small {
+  font-size: $font-size-body-small;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-body;
+}
+
+@mixin body-text-bold {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-body;
+}
+
+@mixin form-input-label {
+  @include body-text-small;
+  color: $color-dark-electric-blue;
+}
+
+@mixin form-input {
+  border-radius: 12px;
+  border: 1px solid $color-borders;
+  height: 50px;
+}
+
+@mixin form-input-placeholder {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-blue;
+  text-align: right;
+}
