@@ -1,5 +1,16 @@
 // global properties
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+  font-family: 'Inter';
+}
+
+
 // color
 $color-blue: #345FF6;
 $color-gunmetal: #253347;
@@ -34,7 +45,7 @@ $line-height-xs: 110%; // For Heading S, M, L, XL
 $line-height-body: 150%; // For Body M, S
 
 // gradient
-$gradient-header-card: linear-gradient(to bottom right, #FFFFFF, #D6E6FE 90%);
+$gradient-header-card: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0%), hsla(216, 95%, 92%, 100%));
 $gradient-bmi-result: linear-gradient(to right, #345FF6, #587DFF);
 
 // Define specific heading styles
@@ -89,12 +100,38 @@ $gradient-bmi-result: linear-gradient(to right, #345FF6, #587DFF);
 @mixin form-input {
   border-radius: 12px;
   border: 1px solid $color-borders;
-  height: 50px;
+
+  padding: 20px 24px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+
+  width: 80%;
 }
 
 @mixin form-input-placeholder {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  color: $color-blue;
-  text-align: right;
+  color: rgb(37, 51, 71, 25%);
+}
+
+@mixin form-input-container {
+  position: relative;
+
+  >input {
+      @include form-input;
+
+      &::placeholder {
+          color: rgb(37, 51, 71, 25%);
+      }
+  }
+
+  >.unit {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      color: $color-blue;
+      
+      transform: translateY(-50%);
+  }
 }

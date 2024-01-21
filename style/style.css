@@ -1,27 +1,31 @@
 @import "../assets/css/reset.css";
-@font-face {
-  font-family: "Inter";
-  src: url("../assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
 body {
   font-family: "Inter";
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
 .bmi-header {
   position: relative;
   height: 70vh;
   min-height: 700px;
 }
-
-.bmi-intro {
+.bmi-header .bmi-intro {
   width: 70%;
   height: 100%;
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
-  background: linear-gradient(to bottom right, #FFFFFF, #D6E6FE 90%);
+  background: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0), hsl(216, 95%, 92%));
 }
-
-.bmi-intro-icon {
+.bmi-header .bmi-intro .bmi-intro-icon {
   display: inline-block;
   background-image: url("../assets/images/logo.svg");
   background-repeat: no-repeat;
@@ -29,29 +33,25 @@ body {
   width: 64px;
   margin: 5% 0% 0% 10%;
 }
-
-.bmi-intro-text {
+.bmi-header .bmi-intro .bmi-intro-text {
   width: 60%;
   margin: 10% 30% 0% 10%;
 }
-
-.bmi-intro-text > h1 {
+.bmi-header .bmi-intro .bmi-intro-text > h1 {
   font-size: 64px;
   font-weight: 600;
   line-height: 110%;
   color: #253347;
   margin: 0% 0% 5% 0%;
 }
-
-.bmi-intro-text > p {
+.bmi-header .bmi-intro .bmi-intro-text > p {
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
   color: #5E6E85;
   width: 80%;
 }
-
-.bmi-inputs {
+.bmi-header .bmi-inputs {
   position: absolute;
   top: 20%;
   right: 7%;
@@ -60,127 +60,123 @@ body {
   background-color: #FFFFFF;
   box-shadow: 5px 5px 10px rgba(143, 174, 207, 0.5);
 }
-
-.bmi-inputs-container {
+.bmi-header .bmi-inputs .form-container {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   padding: 5%;
 }
-
-.bmi-inputs-container > h2 {
+.bmi-header .bmi-inputs .form-container > h2 {
   font-size: 24px;
   font-weight: 600;
   line-height: 110%;
   margin: 0;
 }
-
-.form-container {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.radio-group {
+.bmi-header .bmi-inputs .form-container .radio-group {
   display: flex;
 }
-
-.radio-group > .form-radio {
-  flex: 1;
-}
-
-.data-group {
-  display: flex;
-  gap: 5%;
-}
-
-.data-group > .input-group {
-  flex: 1;
-}
-
-.form-radio {
+.bmi-header .bmi-inputs .form-container .radio-group > .form-radio {
   display: flex;
   gap: 18px;
+  flex: 1;
   align-items: center;
 }
-
-.form-radio > input[type=radio] {
+.bmi-header .bmi-inputs .form-container .radio-group > .form-radio > input[type=radio] {
   font: inherit;
   color: #345FF6;
   width: 1.15em;
   height: 1.15em;
   border: 0.15em solid #345FF6;
 }
-
-.form-radio > label {
-  margin-top: 2px;
+.bmi-header .bmi-inputs .form-container .radio-group > .form-radio > label {
+  margin-top: 3px;
   font-size: 16px;
   font-weight: 600;
 }
-
-.input-group {
+.bmi-header .bmi-inputs .form-container #metric-data {
+  display: flex;
+  gap: 5%;
+}
+.bmi-header .bmi-inputs .form-container #metric-data > .input-group {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
-.input-group > label {
+.bmi-header .bmi-inputs .form-container #metric-data > .input-group > label {
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
   color: #5E6E85;
 }
-
-.input-group > input {
+.bmi-header .bmi-inputs .form-container #metric-data > .input-group > .input-container {
+  position: relative;
+}
+.bmi-header .bmi-inputs .form-container #metric-data > .input-group > .input-container > input {
   border-radius: 12px;
   border: 1px solid #D8E2E7;
-  height: 50px;
+  padding: 20px 24px;
+  font-size: 24px;
+  font-weight: 600;
+  width: 80%;
 }
-
-.input-group > input::placeholder {
+.bmi-header .bmi-inputs .form-container #metric-data > .input-group > .input-container > input::placeholder {
+  color: rgba(37, 51, 71, 0.25);
+}
+.bmi-header .bmi-inputs .form-container #metric-data > .input-group > .input-container > .unit {
+  position: absolute;
+  top: 50%;
+  right: 20px;
   font-size: 24px;
   font-weight: 600;
   color: #345FF6;
-  text-align: right;
+  transform: translateY(-50%);
 }
-
-#imperial-data {
+.bmi-header .bmi-inputs .form-container #imperial-data {
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-
-.imperial-data-group {
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
-.imperial-data-group > label {
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > label {
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
   color: #5E6E85;
 }
-
-.imperial-input-group {
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group {
   display: flex;
   gap: 5%;
 }
-
-.imperial-input-group > input {
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group > .input-container {
+  position: relative;
+}
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group > .input-container > input {
   border-radius: 12px;
   border: 1px solid #D8E2E7;
-  height: 50px;
-  flex: 1;
+  padding: 20px 24px;
+  font-size: 24px;
+  font-weight: 600;
+  width: 80%;
 }
-
-.imperial-input-group > input::placeholder {
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group > .input-container > input::placeholder {
+  color: rgba(37, 51, 71, 0.25);
+}
+.bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group > .input-container > .unit {
+  position: absolute;
+  top: 50%;
+  right: 20px;
   font-size: 24px;
   font-weight: 600;
   color: #345FF6;
-  text-align: right;
+  transform: translateY(-50%);
 }
-
-.result-container {
+.bmi-header .bmi-inputs .form-container .result-container {
   color: #FFFFFF;
   background: linear-gradient(to right, #345FF6, #587DFF);
   padding: 32px;
@@ -189,18 +185,199 @@ body {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
-
-.result-container > h2 {
+.bmi-header .bmi-inputs .form-container .result-container > h2 {
   font-size: 24px;
   font-weight: 600;
   line-height: 110%;
 }
-
-.result-container > p {
+.bmi-header .bmi-inputs .form-container .result-container > p {
   margin-top: 16px;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
+}
+
+.bmi-result {
+  height: 60vh;
+  min-height: 533px;
+  margin: 50px 5% 0px 5%;
+  display: flex;
+  gap: 10%;
+  position: relative;
+}
+.bmi-result .bmi-result-text {
+  width: 45%;
+  margin-top: 15%;
+}
+.bmi-result .bmi-result-pic {
+  height: auto;
+  width: 45%;
+  background-image: url("../assets/images/image-man-eating.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bmi-result .result-vector {
+  width: 85px;
+  height: 200px;
+  background-image: url("../assets/images/pattern-curved-line-left.svg");
+  background-size: contain;
+  position: absolute;
+  top: -38px;
+  left: 90%;
+}
+
+.bmi-result-text > h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 110%;
+}
+.bmi-result-text > p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #5E6E85;
+  margin-top: 35px;
+}
+
+.health-tips {
+  min-height: 400px;
+  margin: 100px 1% 0px 1%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  background: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0), hsl(216, 95%, 92%));
+  border-radius: 35px;
+}
+.health-tips .tip {
+  flex: 1;
+}
+.health-tips h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 110%;
+  margin-top: 45px;
+}
+.health-tips p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #5E6E85;
+  margin-top: 20px;
+}
+.health-tips .health-eating-icon {
+  height: 64px;
+  width: 64px;
+  background-image: url("../assets/images/icon-eating.svg");
+}
+.health-tips .regular-exercise-icon {
+  height: 64px;
+  width: 64px;
+  background-image: url("../assets/images/icon-exercise.svg");
+}
+.health-tips .adequate-sleep-icon {
+  height: 64px;
+  width: 64px;
+  background-image: url("../assets/images/icon-sleep.svg");
+}
+
+.bmi-limitations-container {
+  margin: 100px 5% 130px 5%;
+  height: 70vh;
+  min-height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  position: relative;
+}
+.bmi-limitations-container .limitation-header {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.bmi-limitations-container .limitation-header h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 110%;
+}
+.bmi-limitations-container .limitation-header p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #5E6E85;
+  margin-top: 35px;
+}
+.bmi-limitations-container .limitation {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+  background-color: #FFFFFF;
+}
+.bmi-limitations-container .limitation:nth-child(2) {
+  margin-left: 10%;
+  margin-right: 130px;
+}
+.bmi-limitations-container .limitation:nth-child(3) {
+  margin-left: 30%;
+}
+.bmi-limitations-container .limitation:nth-child(5) {
+  margin-left: 15%;
+}
+.bmi-limitations-container .limitation .title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.bmi-limitations-container .limitation h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 110%;
+}
+.bmi-limitations-container .limitation p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #5E6E85;
+}
+.bmi-limitations-container .gender-icon {
+  height: 32px;
+  width: 32px;
+  background-image: url("../assets/images/icon-gender.svg");
+}
+.bmi-limitations-container .age-icon {
+  height: 32px;
+  width: 32px;
+  background-image: url("../assets/images/icon-age.svg");
+}
+.bmi-limitations-container .muscle-icon {
+  height: 32px;
+  width: 32px;
+  background-image: url("../assets/images/icon-muscle.svg");
+}
+.bmi-limitations-container .pregnancy-icon {
+  height: 32px;
+  width: 32px;
+  background-image: url("../assets/images/icon-pregnancy.svg");
+}
+.bmi-limitations-container .race-icon {
+  height: 32px;
+  width: 32px;
+  background-image: url("../assets/images/icon-race.svg");
+}
+.bmi-limitations-container .limitation-vector {
+  width: 94px;
+  height: 122px;
+  background-image: url("../assets/images/pattern-curved-line-right.svg");
+  background-size: contain;
+  position: absolute;
+  top: 35%;
+  left: 14%;
 }
 
 /*# sourceMappingURL=style.css.map */
