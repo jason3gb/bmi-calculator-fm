@@ -18,10 +18,15 @@ body {
   height: 70vh;
   min-height: 700px;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .bmi-header {
-    height: 70vh;
     min-height: 600px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .bmi-header {
+    height: 80vh;
+    min-height: 800px;
   }
 }
 .bmi-header .bmi-intro {
@@ -31,7 +36,16 @@ body {
   border-bottom-right-radius: 35px;
   background: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0), hsl(216, 95%, 92%));
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-header .bmi-intro {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-header .bmi-intro {
     width: 100%;
     height: 70%;
@@ -48,7 +62,16 @@ body {
   width: 64px;
   margin: 5% 0% 0% 10%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-header .bmi-intro .bmi-intro-icon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-size: contain;
+    margin: 5%;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-header .bmi-intro .bmi-intro-icon {
     display: inline-block;
     height: 40px;
@@ -61,7 +84,14 @@ body {
   width: 60%;
   margin: 10% 30% 0% 10%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-header .bmi-intro .bmi-intro-text {
+    width: 80%;
+    margin: 0;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-header .bmi-intro .bmi-intro-text {
     width: 80%;
     margin: 0;
@@ -75,7 +105,15 @@ body {
   color: #253347;
   margin: 0% 0% 5% 0%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-header .bmi-intro .bmi-intro-text > h1 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 110%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-header .bmi-intro .bmi-intro-text > h1 {
     font-size: 48px;
     font-weight: 600;
@@ -90,7 +128,12 @@ body {
   color: #5E6E85;
   width: 80%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-header .bmi-intro .bmi-intro-text > p {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-header .bmi-intro .bmi-intro-text > p {
     width: 100%;
   }
@@ -104,9 +147,17 @@ body {
   background-color: #FFFFFF;
   box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .bmi-header .bmi-inputs {
     top: 350px;
+    width: 80%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .bmi-header .bmi-inputs {
+    top: 400px;
     width: 80%;
     right: 50%;
     transform: translateX(50%);
@@ -150,6 +201,12 @@ body {
   display: flex;
   gap: 5%;
 }
+@media only screen and (max-width: 600px) {
+  .bmi-header .bmi-inputs .form-container #metric-data {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
 .bmi-header .bmi-inputs .form-container #metric-data > .input-group {
   flex: 1;
   display: flex;
@@ -168,10 +225,11 @@ body {
 .bmi-header .bmi-inputs .form-container #metric-data > .input-group > .input-container > input {
   border-radius: 12px;
   border: 1px solid #D8E2E7;
-  padding: 20px 24px;
   font-size: 24px;
   font-weight: 600;
-  width: 80%;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 0px 20px 20px;
 }
 .bmi-header .bmi-inputs .form-container #metric-data > .input-group > .input-container > input::placeholder {
   color: rgba(37, 51, 71, 0.25);
@@ -211,10 +269,11 @@ body {
 .bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group > .input-container > input {
   border-radius: 12px;
   border: 1px solid #D8E2E7;
-  padding: 20px 24px;
   font-size: 24px;
   font-weight: 600;
-  width: 80%;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px 0px 20px 20px;
 }
 .bmi-header .bmi-inputs .form-container #imperial-data .imperial-data-group > .imperial-input-group > .input-container > input::placeholder {
   color: rgba(37, 51, 71, 0.25);
@@ -258,22 +317,42 @@ body {
   align-items: center;
   position: relative;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .bmi-result {
     margin: 0 5%;
     height: 50vh;
     min-height: 400px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .bmi-result {
+    height: auto;
+    margin: 200px 0px 0px 0px;
+    flex-direction: column;
+    gap: 48px;
+    align-items: unset;
+  }
+}
 .bmi-result .bmi-result-text {
   width: 45%;
+}
+@media only screen and (max-width: 600px) {
+  .bmi-result .bmi-result-text {
+    width: unset;
+    margin: 0px 24px;
+  }
 }
 .bmi-result .bmi-result-text > h2 {
   font-size: 48px;
   font-weight: 600;
   line-height: 110%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-result .bmi-result-text > h2 {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-result .bmi-result-text > h2 {
     font-size: 32px;
   }
@@ -286,12 +365,19 @@ body {
   margin-top: 35px;
 }
 .bmi-result .bmi-result-pic {
+  flex-shrink: 0;
   height: 100%;
   width: 45%;
   background-image: url("../assets/images/image-man-eating.webp");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 600px) {
+  .bmi-result .bmi-result-pic {
+    height: 400px;
+    width: 100%;
+  }
 }
 .bmi-result .result-vector {
   width: 85px;
@@ -302,7 +388,12 @@ body {
   top: -38px;
   left: 90%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-result .result-vector {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-result .result-vector {
     display: none;
   }
@@ -319,11 +410,21 @@ body {
   background: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0), hsl(216, 95%, 92%));
   border-radius: 35px;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .health-tips {
     flex-direction: column;
     gap: 40px;
     margin: 0;
+    border-radius: 0px;
+    padding: 60px 40px;
+    min-height: 300px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .health-tips {
+    flex-direction: column;
+    gap: 40px;
+    margin: 50px 0px 0px 0px;
     border-radius: 0px;
     padding: 60px 40px;
     min-height: 300px;
@@ -334,7 +435,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .health-tips .tip {
     flex-direction: row;
     align-items: center;
@@ -344,9 +445,14 @@ body {
 .health-tips .tip > .tip-text {
   margin-top: 45px;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .health-tips .tip > .tip-text {
     margin-top: 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .health-tips .tip > .tip-text {
+    margin-top: 32px;
   }
 }
 .health-tips .tip > .tip-text > h3 {
@@ -390,7 +496,13 @@ body {
   gap: 32px;
   position: relative;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-limitations-container {
+    gap: 15px;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-limitations-container {
     gap: 15px;
     justify-content: center;
@@ -401,9 +513,15 @@ body {
   display: flex;
   flex-direction: column;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .bmi-limitations-container .limitation-header {
     width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .bmi-limitations-container .limitation-header {
+    width: 100%;
+    margin-bottom: 50px;
   }
 }
 .bmi-limitations-container .limitation-header > h2 {
@@ -411,7 +529,13 @@ body {
   font-weight: 600;
   line-height: 110%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-limitations-container .limitation-header > h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-limitations-container .limitation-header > h2 {
     font-size: 32px;
     text-align: center;
@@ -424,7 +548,13 @@ body {
   color: #5E6E85;
   margin-top: 35px;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-limitations-container .limitation-header > p {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-limitations-container .limitation-header > p {
     text-align: center;
     margin-top: 30px;
@@ -454,7 +584,7 @@ body {
     margin-left: 15%;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
   .bmi-limitations-container .limitation {
     width: 40%;
   }
@@ -509,7 +639,12 @@ body {
   top: 35%;
   left: 14%;
 }
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .bmi-limitations-container .limitation-vector {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
   .bmi-limitations-container .limitation-vector {
     display: none;
   }

@@ -10,8 +10,12 @@
     min-height: 700px;
 
     @include base.tablet {
-        height: 70vh;
         min-height: 600px;
+    }
+
+    @include base.mobile {
+        height: 80vh;
+        min-height: 800px;
     }
 
     .bmi-intro {
@@ -23,6 +27,15 @@
         background: base.$gradient-header-card;
 
         @include base.tablet {
+            width: 100%;
+            height: 70%;
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include base.mobile {
             width: 100%;
             height: 70%;
             display: flex;
@@ -48,6 +61,15 @@
                 background-size: contain;
                 margin: 5%;
             }
+
+            @include base.mobile {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+
+                background-size: contain;
+                margin: 5%;
+            }
         }
 
 
@@ -56,6 +78,12 @@
             margin: 10% 30% 0% 10%;
 
             @include base.tablet {
+                width: 80%;
+                margin: 0;
+                text-align: center;
+            }
+
+            @include base.mobile {
                 width: 80%;
                 margin: 0;
                 text-align: center;
@@ -70,6 +98,11 @@
                     @include base.heading-l;
                     text-align: center
                 }
+
+                @include base.mobile {
+                    @include base.heading-l;
+                    text-align: center
+                }
             }
 
             >p {
@@ -78,6 +111,10 @@
                 width: 80%;
 
                 @include base.tablet {
+                    width: 100%;
+                }
+
+                @include base.mobile {
                     width: 100%;
                 }
             }
@@ -97,6 +134,13 @@
 
         @include base.tablet {
             top: 350px;
+            width: 80%;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        @include base.mobile {
+            top: 400px;
             width: 80%;
             right: 50%;
             transform: translateX(50%);
@@ -144,6 +188,11 @@
             #metric-data {
                 display: flex;
                 gap: 5%;
+
+                @include base.mobile {
+                    flex-direction: column;
+                    gap: 16px;
+                }
 
                 >.input-group {
                     flex: 1;
@@ -232,13 +281,31 @@
         min-height: 400px;
     }
 
+    @include base.mobile {
+        height: auto;
+        margin: 200px 0px 0px 0px;
+        flex-direction: column;
+        gap: 48px;
+
+        align-items: unset;
+    }
+
     .bmi-result-text {
         width: 45%;
+
+        @include base.mobile {
+            width: unset;
+            margin: 0px 24px;
+        }
 
         >h2 {
             @include base.heading-l;
 
             @include base.tablet {
+                font-size: 32px;
+            }
+
+            @include base.mobile {
                 font-size: 32px;
             }
         }
@@ -251,6 +318,8 @@
     }
 
     .bmi-result-pic {
+        flex-shrink: 0;
+
         height: 100%;
         width: 45%;
 
@@ -258,6 +327,11 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+
+        @include base.mobile {
+            height: 400px;
+            width: 100%;
+        }
     }
 
     .result-vector {
@@ -272,6 +346,10 @@
         left: 90%;
 
         @include base.tablet {
+            display: none;
+        }
+
+        @include base.mobile {
             display: none;
         }
     }
@@ -303,6 +381,17 @@
         min-height: 300px;
     }
 
+    @include base.mobile {
+        flex-direction: column;
+        gap: 40px;
+
+        margin: 50px 0px 0px 0px;
+        border-radius: 0px;
+        padding: 60px 40px;
+
+        min-height: 300px;
+    }
+
     .tip {
         flex: 1;
         display: flex;
@@ -319,6 +408,10 @@
 
             @include base.tablet {
                 margin-top: 0;
+            }
+
+            @include base.mobile {
+                margin-top: 32px;
             }
 
             >h3 {
@@ -375,6 +468,11 @@
         justify-content: center;
     }
 
+    @include base.mobile{
+        gap: 15px;
+        justify-content: center;
+    }
+
     .limitation-header {
         width: 40%;
         display: flex;
@@ -384,10 +482,20 @@
             width: 100%;
         }
 
+        @include base.mobile {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
         >h2 {
             @include base.heading-l;
 
             @include base.tablet {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            @include base.mobile {
                 font-size: 32px;
                 text-align: center;
             }
@@ -400,6 +508,11 @@
             margin-top: 35px;
 
             @include base.tablet {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            @include base.mobile {
                 text-align: center;
                 margin-top: 30px;
             }
@@ -437,7 +550,7 @@
         @include base.tablet {
             width: 40%;
         }
-
+        
         >.title {
             display: flex;
             align-items: center;
@@ -495,6 +608,10 @@
         left: 14%;
 
         @include base.tablet {
+            display: none;
+        }
+
+        @include base.mobile {
             display: none;
         }
     }
