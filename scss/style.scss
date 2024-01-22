@@ -9,6 +9,11 @@
     height: 70vh;
     min-height: 700px;
 
+    @include base.tablet {
+        height: 70vh;
+        min-height: 600px;
+    }
+
     .bmi-intro {
         width: 70%;
         height: 100%;
@@ -16,6 +21,15 @@
         border-bottom-right-radius: 35px;
 
         background: base.$gradient-header-card;
+
+        @include base.tablet {
+            width: 100%;
+            height: 70%;
+            display: flex;
+
+            flex-direction: column;
+            align-items: center;
+        }
 
         .bmi-intro-icon {
             display: inline-block;
@@ -25,22 +39,47 @@
             width: 64px;
 
             margin: 5% 0% 0% 10%;
+
+            @include base.tablet {
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+
+                background-size: contain;
+                margin: 5%;
+            }
         }
+
 
         .bmi-intro-text {
             width: 60%;
             margin: 10% 30% 0% 10%;
 
+            @include base.tablet {
+                width: 80%;
+                margin: 0;
+                text-align: center;
+            }
+
             >h1 {
                 @include base.heading-xl;
                 color: base.$color-gunmetal;
                 margin: 0% 0% 5% 0%;
+
+                @include base.tablet {
+                    @include base.heading-l;
+                    text-align: center
+                }
             }
 
             >p {
                 @include base.body-text-small;
                 color: base.$color-dark-electric-blue;
                 width: 80%;
+
+                @include base.tablet {
+                    width: 100%;
+                }
             }
         }
     }
@@ -54,7 +93,14 @@
 
         border-radius: 16px;
         background-color: base.$color-pure-white;
-        box-shadow: 5px 5px 10px rgba(143, 174, 207, 0.5);
+        box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+
+        @include base.tablet {
+            top: 350px;
+            width: 80%;
+            right: 50%;
+            transform: translateX(50%);
+        }
 
         .form-container {
             margin-top: 32px;
@@ -176,16 +222,36 @@
 
     display: flex;
     gap: 10%;
+    align-items: center;
 
     position: relative;
 
+    @include base.tablet {
+        margin: 0 5%;
+        height: 50vh;
+        min-height: 400px;
+    }
+
     .bmi-result-text {
         width: 45%;
-        margin-top: 15%;
+
+        >h2 {
+            @include base.heading-l;
+
+            @include base.tablet {
+                font-size: 32px;
+            }
+        }
+
+        >p {
+            @include base.body-text-small;
+            color: base.$color-dark-electric-blue;
+            margin-top: 35px;
+        }
     }
 
     .bmi-result-pic {
-        height: auto;
+        height: 100%;
         width: 45%;
 
         background-image: url('../assets/images/image-man-eating.webp');
@@ -204,19 +270,10 @@
 
         top: -38px;
         left: 90%;
-    }
-}
 
-
-.bmi-result-text> {
-    h2 {
-        @include base.heading-l;
-    }
-
-    p {
-        @include base.body-text-small;
-        color: base.$color-dark-electric-blue;
-        margin-top: 35px;
+        @include base.tablet {
+            display: none;
+        }
     }
 }
 
@@ -235,37 +292,68 @@
     background: base.$gradient-header-card;
     border-radius: 35px;
 
+    @include base.tablet {
+        flex-direction: column;
+        gap: 40px;
+
+        margin: 0;
+        border-radius: 0px;
+        padding: 60px 40px;
+
+        min-height: 300px;
+    }
+
     .tip {
         flex: 1;
-    }
+        display: flex;
+        flex-direction: column;
 
-    h3 {
-        @include base.heading-m;
-        margin-top: 45px;
-    }
+        @include base.tablet {
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+        }
 
-    p {
-        @include base.body-text-small;
-        color: base.$color-dark-electric-blue;
-        margin-top: 20px;
-    }
+        >.tip-text {
+            margin-top: 45px;
 
-    .health-eating-icon {
-        height: 64px;
-        width: 64px;
-        background-image: url('../assets/images/icon-eating.svg');
-    }
+            @include base.tablet {
+                margin-top: 0;
+            }
 
-    .regular-exercise-icon {
-        height: 64px;
-        width: 64px;
-        background-image: url('../assets/images/icon-exercise.svg');
-    }
+            >h3 {
+                @include base.heading-m;
+            }
 
-    .adequate-sleep-icon {
-        height: 64px;
-        width: 64px;
-        background-image: url('../assets/images/icon-sleep.svg');
+            >p {
+                @include base.body-text-small;
+                color: base.$color-dark-electric-blue;
+                margin-top: 20px;
+            }
+        }
+
+        .health-eating-icon {
+            flex: 0 0 auto;
+            height: 64px;
+            width: 64px;
+            background-image: url('../assets/images/icon-eating.svg');
+            background-repeat: no-repeat;
+        }
+
+        .regular-exercise-icon {
+            flex: 0 0 auto;
+            height: 64px;
+            height: 64px;
+            width: 64px;
+            background-image: url('../assets/images/icon-exercise.svg');
+        }
+
+        .adequate-sleep-icon {
+            flex: 0 0 auto;
+            height: 64px;
+            width: 64px;
+            background-image: url('../assets/images/icon-sleep.svg');
+        }
     }
 }
 
@@ -274,7 +362,6 @@
 .bmi-limitations-container {
 
     margin: 100px 5% 130px 5%;
-    height: 70vh;
     min-height: 700px;
 
     display: flex;
@@ -283,53 +370,75 @@
 
     position: relative;
 
+    @include base.tablet {
+        gap: 15px;
+        justify-content: center;
+    }
+
     .limitation-header {
         width: 40%;
         display: flex;
         flex-direction: column;
-    }
 
-    .limitation-header {
-        h2 {
-            @include base.heading-l;
+        @include base.tablet {
+            width: 100%;
         }
 
-        p {
+        >h2 {
+            @include base.heading-l;
+
+            @include base.tablet {
+                font-size: 32px;
+                text-align: center;
+            }
+        }
+
+        >p {
             @include base.body-text-small;
             color: base.$color-dark-electric-blue;
 
             margin-top: 35px;
+
+            @include base.tablet {
+                text-align: center;
+                margin-top: 30px;
+            }
         }
     }
 
     .limitation {
-        width: 25%;
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: 15px;
 
         padding: 32px;
         border-radius: 16px;
 
         box-shadow: 16px 32px 56px rgba(143, 174, 207, 25%);
         background-color: base.$color-pure-white;
-    }
 
-    .limitation:nth-child(2) {
-        margin-left: 10%;
-        margin-right: 130px;
-    }
+        @include base.desktop {
+            width: 25%;
 
-    .limitation:nth-child(3) {
-        margin-left: 30%;
-    }
+            &:nth-child(2) {
+                margin-left: 10%;
+                margin-right: 130px;
+            }
 
-    .limitation:nth-child(5) {
-        margin-left: 15%;
-    }
+            &:nth-child(3) {
+                margin-left: 30%;
+            }
 
-    .limitation {
-        .title {
+            &:nth-child(5) {
+                margin-left: 15%;
+            }
+        }
+
+        @include base.tablet {
+            width: 40%;
+        }
+
+        >.title {
             display: flex;
             align-items: center;
             gap: 16px;
@@ -343,36 +452,36 @@
             @include base.body-text-small;
             color: base.$color-dark-electric-blue;
         }
-    }
 
-    .gender-icon {
-        height: 32px;
-        width: 32px;
-        background-image: url('../assets/images/icon-gender.svg');
-    }
+        .gender-icon {
+            height: 32px;
+            width: 32px;
+            background-image: url('../assets/images/icon-gender.svg');
+        }
 
-    .age-icon {
-        height: 32px;
-        width: 32px;
-        background-image: url('../assets/images/icon-age.svg');
-    }
+        .age-icon {
+            height: 32px;
+            width: 32px;
+            background-image: url('../assets/images/icon-age.svg');
+        }
 
-    .muscle-icon {
-        height: 32px;
-        width: 32px;
-        background-image: url('../assets/images/icon-muscle.svg');
-    }
+        .muscle-icon {
+            height: 32px;
+            width: 32px;
+            background-image: url('../assets/images/icon-muscle.svg');
+        }
 
-    .pregnancy-icon {
-        height: 32px;
-        width: 32px;
-        background-image: url('../assets/images/icon-pregnancy.svg');
-    }
+        .pregnancy-icon {
+            height: 32px;
+            width: 32px;
+            background-image: url('../assets/images/icon-pregnancy.svg');
+        }
 
-    .race-icon {
-        height: 32px;
-        width: 32px;
-        background-image: url('../assets/images/icon-race.svg');
+        .race-icon {
+            height: 32px;
+            width: 32px;
+            background-image: url('../assets/images/icon-race.svg');
+        }
     }
 
     .limitation-vector {
@@ -384,5 +493,9 @@
         position: absolute;
         top: 35%;
         left: 14%;
+
+        @include base.tablet {
+            display: none;
+        }
     }
 }

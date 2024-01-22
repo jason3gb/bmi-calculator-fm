@@ -2,12 +2,31 @@
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 body {
   font-family: 'Inter';
+}
+
+// responsive variables
+@mixin desktop {
+  @media only screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
 }
 
 
@@ -45,7 +64,7 @@ $line-height-xs: 110%; // For Heading S, M, L, XL
 $line-height-body: 150%; // For Body M, S
 
 // gradient
-$gradient-header-card: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0%), hsla(216, 95%, 92%, 100%));
+$gradient-header-card: linear-gradient(to bottom right, hsla(183, 95%, 92%, 0), hsla(216, 95%, 92%, 100%));
 $gradient-bmi-result: linear-gradient(to right, #345FF6, #587DFF);
 
 // Define specific heading styles
@@ -116,22 +135,22 @@ $gradient-bmi-result: linear-gradient(to right, #345FF6, #587DFF);
   position: relative;
 
   >input {
-      @include form-input;
+    @include form-input;
 
-      &::placeholder {
-          color: rgb(37, 51, 71, 25%);
-      }
+    &::placeholder {
+      color: rgb(37, 51, 71, 25%);
+    }
   }
 
   >.unit {
-      position: absolute;
-      top: 50%;
-      right: 20px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
 
-      font-size: $font-size-sm;
-      font-weight: $font-weight-semibold;
-      color: $color-blue;
-      
-      transform: translateY(-50%);
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-blue;
+
+    transform: translateY(-50%);
   }
 }
