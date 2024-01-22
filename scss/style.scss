@@ -246,14 +246,20 @@
                 border-top-left-radius: 16px;
                 border-bottom-left-radius: 16px;
 
-                >h2 {
+                >.result-header {
                     @include base.heading-m;
                 }
 
-                >p {
-                    margin-top: 16px;
+                >.result-value {
+                    margin-top: 8px;
+                    @include base.heading-l;
+                }
+
+                >.result-explanation {
+                    margin-top: 20px;
                     @include base.body-text-small;
                 }
+
             }
         }
     }
@@ -468,7 +474,7 @@
         justify-content: center;
     }
 
-    @include base.mobile{
+    @include base.mobile {
         gap: 15px;
         justify-content: center;
     }
@@ -550,7 +556,7 @@
         @include base.tablet {
             width: 40%;
         }
-        
+
         >.title {
             display: flex;
             align-items: center;
